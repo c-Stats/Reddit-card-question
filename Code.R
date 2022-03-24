@@ -89,7 +89,7 @@ for(i in 1:7){
 
 	p_win[i] <- m/n 
 	n <- n - 1
-
+	
 	if(i %% 2 == 0){
 
 		m <- m - 1
