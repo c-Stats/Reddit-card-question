@@ -8,7 +8,7 @@ sim <- function(){
 	#midpoint at 25
 
 	#Can pick at most 7 so no reason to sample 12
-	picked <- sample(cards, 8)
+	picked <- sample(cards, 7)
 
 	k <- 1
 	#Flip 7 cards
@@ -16,7 +16,7 @@ sim <- function(){
 
 		u <- runif(1)
 		#Pick above or below at random
-		if(((u > 0.5) * (picked[i+1] > 25) + (u < 0.5) * (picked[i+1] < 25)) == 0){break}
+		if(((u > 0.5) * (picked[i] > 25) + (u < 0.5) * (picked[i] < 25)) == 0){break}
 		#Keep going if win, otherwise stops at current value of k
 		k <- k + 1
 
@@ -40,7 +40,7 @@ sim <- function(){
 	#midpoint at 25
 
 	#Can pick at most 7 so no reason to sample 12
-	picked <- sample(cards, 8)
+	picked <- sample(cards, 7)
 
 	n_above <- 0
 	n_below <- 0
@@ -51,12 +51,12 @@ sim <- function(){
 
 		if(n_above >= n_below){
 
-			if(picked[i+1] < 25){break}
+			if(picked[i] < 25){break}
 			n_below <- n_below + 1
 
 		} else {
 
-			if(picked[i+1] > 25){break}
+			if(picked[i] > 25){break}
 			n_above <- n_above + 1
 
 		}
