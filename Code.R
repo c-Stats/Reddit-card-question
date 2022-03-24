@@ -103,10 +103,12 @@ p_lose <- 1 - p_win
 #Probability of being alive at time t
 #We are alive at time 0 
 S <- c(1, cumprod(p_win))
+
 #Probability of run ending at time t is
 #P(alive) * P(dying)
 p_end <- S 
 p_end[1:7]  <- p_end[1:7] * p_lose
+
 #Sanity check
 sum(p_end) == 1
 
