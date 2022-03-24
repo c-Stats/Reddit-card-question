@@ -115,7 +115,7 @@ sum(p_end) == 1
 #Mean net payout
 p_end %*% payout - 1
 
-#Variance
-p_end %*% payout^2 - (p_end %*% payout)^2
+#Sdev
+sqrt(p_end %*% payout^2 - (p_end %*% payout)^2)
 
 
